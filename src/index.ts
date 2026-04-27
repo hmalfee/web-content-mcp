@@ -64,9 +64,8 @@ async function start(): Promise<void> {
   console.error("Web Content MCP Server running on stdio");
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
-  start().catch((error) => {
-    console.error("Server error:", error);
-    process.exit(1);
-  });
-}
+// Start the server
+start().catch((error) => {
+  console.error("Server error:", error);
+  process.exit(1);
+});
